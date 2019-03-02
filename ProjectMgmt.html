@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Project Management Tool</title>
+    <script src="ProjectMgmt.js"></script>
+</head>
+
+<body>
+    <h1>Project Management Tool</h1>
+
+    <input type="text" id="username" placeholder="username">
+    <button onclick="setUsername()"> Log In </button>
+    <p>Logged in as: </p>
+    <p id="usernameDisplay"></p>
+    <p>ID: </p>
+    <p id="idDisplay"></p>
+
+    <h2> New Issue details: </h2>
+
+    <div id="issueDetails">
+        <select id="type" required>
+            <option value="feature">Feature</option>
+            <option value="bug">Bug</option>
+            <option value="task">Task</option>
+        </select>
+        <input type="text" id="name" placeholder="name">
+        <input type="number" id="sprintID" placeholder="sprintID">
+        <input type="number" id="assigneeID" placeholder="assigneeID">
+        <input type="text" id="description" placeholder="description">
+        <input type="number" id="taskIDs" placeholder="taskIDs (except if <Task>)">
+        <input type="number" id="commentIDs" placeholder="commentIDs">
+        <button onclick="createIssue()"> Create Issue </button>
+
+        <p>
+            <input type="number" id="theID" placeholder="Issue ID">
+            <button onclick="updateIssue()"> Update Issue </button>
+            <h5> Update the Issue with the given ID using the fields above </h5>
+        </p>
+
+    </div>
+
+    <h2> New Comment: </h2>
+
+    <div id="commentDetails">
+        <input type="text" id="commName" placeholder="commName">
+        <button onclick="createComment()"> Create Comment </button>
+    </div>
+
+    <h2> New Sprint: </h2>
+
+    <div id="sprintDetails">
+        <input type="text" id="sprintName" placeholder="commName">
+        <button onclick="createSprint()"> Create Comment </button>
+    </div>
+
+    <h2> Filter issues: </h2>
+
+    <div id="filterStatus">
+        <select id="statusSelected" required>
+            <option value="New">New</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Feedback">Feedback</option>
+            <option value="Rework">Rework</option>
+            <option value="Resolved">Resolved</option>
+            <option value="Ready for Testing">Ready for Testing</option>
+        </select>
+        <button onclick="filterStatus()"> Filter by Status </button>
+        <li id="statusResults">Results:</li>
+    </div>
+
+</body>
+
+</html>
